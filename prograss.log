@@ -1,0 +1,159 @@
+2016/9/06
+/*
+*  Download and install Neo4j3.0.3,learn cypher to oprate.
+*  @xspbruins
+*/
+2016/9/12
+/*
+*  Complete class-design: realizing use of neo4j by php,accurately,by neo4j-php-client.
+*  Linked-US,can implement registe,login,search for friend->friends,show the friend's active
+*  @xspbruins
+*/
+2016/12/03
+/*
+*  Use the command "composer update" build up the composer frame 
+*  Detail adress: https://lvwenhan.com/php/405.html
+*  Import Neo-php-client
+*  @xspbruins
+*/
+2016/12/07
+/*
+*  Alter five front end pages,delete 18-19<link>line at <head></head>
+*  @xspbruins
+*/
+2016/12/07
+/*
+*  Rollback to NeoWork front end acording with my aesthtic
+*  Create file folder such as lib,configs, core etc..
+*  @xspbruins
+*/
+2016/12/10
+/*
+*  Register page problem:solve click event:click the button "next" after verify account,password etc.
+*  do not show the next fileset
+*  Complete registe user part.
+*  @xspbruins
+*/
+2016/12/11
+/*
+*  Design neo4j graphic node labels,property keys,relationship types
+*  @xspbruins
+*/
+2016/12/13
+/*
+*  Problem:break down with the question:why input the Chinese ,get a Catchable fatal error
+*  @xspbruins
+*/
+2016/12/14
+/*
+*  Solve the problem'2016/12/13',transform the encoding format to utf8 with notepads
+*  Reason: NeoWork project use encoding utf8 while NeoGraduationPro use encoding ANSI
+*         so,pass by value with form(or other) show garbage characters
+*  @xspbruins
+*/
+2016/12/15
+/*
+*  Perfect register page,such as tag,address. when user do not fill in the information,
+*  doRegister.php help to complete them.
+*  address: <code>gethostbyname(gethostname())</code>,use Sina interface 'http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=json'
+*  @xspbruins
+*/
+2016/12/15
+/*
+*  Design login-alertpage,80%
+*/
+2016/12/16
+/*
+*  Design login-logic-php,100%
+*/
+2016/12/21
+/*
+*  Alter doRegister.php page logic ,add a return value 'ORC',then after registe index.php get an value of ORC,
+*  Judge open or close the login-alert
+*
+*  Judge account or name or phone login
+*  @xspbruins
+*/
+2016/12/22
+/*
+*  Add judge code,when login ,"登录"&"注册" change into "$login_user"&"注销"
+*  Add page logout.php for "注销"
+*
+*  if show the garbage characters see the encoding of page may it is ot ANSI or GBK, while you use utf-8
+*  @xspbruins
+*/
+2016/12/23
+/*
+*  Add login verify
+*/
+2016/12/24
+/*
+*  MERRY CHRISTMAS!!! but I'm still type codes...
+*  Ajax to refresh verify：add verify img->src a parameter,and in that way, i use dateTime()
+*  First, set yimezone
+*  Second, new dateTime('Y-m-d H:i:s')
+*  Third, change the <code><img src='getVerify.php'/></code> to <code>echo '<img src="getVerify.php?"'.$time.'/>'</code>
+*/
+2016/12/25
+/*
+*  Add findbackPasswordSt1 & St2 page：
+*  Complete redirect from St1 to St2,and finish verification on Account and Email
+*  @xspbruins
+*/
+2016/12/28
+/*
+*  Add $_SESSION['count'] when refreshed index.php (>1),do not open the login-alert
+*/
+2016/12/29
+/*
+*  Add five page for the rest function
+*  Solve problem about <code><a href=''/></code> do not redirect to other webpages:
+*  <code><a href=''/></code> turn into <code><a href='' onclick='location(here,your target webpage)'/></code>,as you see,just add onclick
+*/
+2016/12/31
+/*
+*  As you konw,HAPPY NEW YEAR! countdown party
+*/
+2017/01/01
+/*
+*  New Year's Day!
+*/
+2017/01/02
+/*
+*  Just add userInfo page,and alter css,jQuery. 
+*/
+2017/01/03
+/*
+*  Leading data into userInfo page,and add the module about edit userinformation
+*  Also,with using Ajax to partial refresh userInfo.
+*  @xspbruins
+*/
+2017/01/04
+/*
+*  Complete contactUS page by url(D:\课程设计\66137\index.html:#contact),exactly,it's a part.
+*  Upload new avatar image with Ajax,and create a function at the edit information form,realize click show or hidde.
+*  @xspbruins 
+*/
+2017/01/05
+/*
+*  Create feedBack node in neo4j,and  joint (userPeople) with (feedBack)
+*  Also,solve the problem that once create a feedBack node,and joint them,it'll relink userPeopleNode and feedBackNode which has a connection before
+*  The solution:while create a feedBack node,return id(new node).Then,we can depend on this id jointing the two nodes.
+*  @xspbruins
+*/
+2017/01/06
+/*
+*  Try to dig Ajax how to POST muti-parameters and refresh muti-partial refresh with return data
+*/
+201/01/07
+/*
+*  POST four parameter with Ajax to editUserInfo,try to divice return string with seting divisionChar,but,it'll be difficulty to differentiate which to refresh
+*  So,for distinguish them,I return an array with keys.
+*  One point attention! when return an array,must use json_encode(),and ajax use dataType:"json",else,it will just output string not array.
+*  When output the array,use <code> for(var key in data){alert(key);alert(data[key]);} </code>
+*  @xspbruins
+*/
+2017/01/08
+/*
+*  
+*/

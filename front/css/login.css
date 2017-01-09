@@ -1,0 +1,266 @@
+@charset "utf-8";
+
+* {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+a, img {
+	border: 0;
+}
+
+a {
+	text-decoration: none;
+	color: #535353;
+	font-family: "arial", "微软雅黑";
+}
+
+.fl {
+	float: left;
+	font-family: "arial", "微软雅黑";
+}
+
+.fr {
+	float: right;
+}
+
+.clear {
+	clear: both;
+	display: block;
+	overflow: hidden;
+	height: 0;
+	line-height: 0;
+}
+
+.pd20 {
+	padding: 20px;
+}
+
+.pd50 {
+	padding: 50px;
+}
+
+/* login */
+.login {
+	position: relative;
+	height: 32px;
+	line-height: 32px;
+	margin: 8px 20px 0 0;
+	display: inline;
+}
+
+.login li {
+	float: left;
+	display: block;
+}
+
+.login li a {
+	text-align: center;
+	font-size: 14px;
+	float: left;
+	display: block;
+	width: 70px;
+	height: 32px;
+	line-height: 32px;
+	font-family: "微软雅黑";
+}
+
+.loginmask {
+	width: 100%;
+	height: 100%;
+	z-index: 8;
+	background: #000;
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: none;
+}
+/* loginalert */
+#loginalert {
+	width: 440px;
+	background: #fff;
+	position: fixed;
+	top: -600px;
+	left: 50%;
+	margin-left: -220px;
+	_margin-left: 500px;
+	z-index: 99;
+	display: none;
+}
+
+.closealert {
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+	background: url(../images/close-icons.png) no-repeat;
+	-webkit-transition: all 0.4s ease-out;
+	-moz-transition: all 0.4s ease-out;
+	-o-transition: all 0.4s ease-out;
+	transition: all 0.4s ease-out;
+}
+
+.closealert:hover {
+	transform: rotate(-180deg);
+	-moz-transform: rotate(-180deg);
+	-webkit-transform: rotate(-180deg);
+	-o-transform: rotate(-180deg);
+}
+
+.loginwrap {
+	width: 340px;
+	margin: 0 auto;
+}
+
+.loginh {
+	height: 40px;
+	margin-top: 20px;
+}
+
+.loginh .fl {
+	font-size: 30px;
+	line-height: 40px;
+	color: #292929;
+}
+
+.loginh .fr {
+	font-size: 18px;
+	line-height: 50px;
+	color: #707070;
+}
+
+.loginh .fr a {
+	font-size: 18px;
+	line-height: 50px;
+	color: #FF4200;
+	margin-left: 5px;
+}
+
+.loginwrap h3 {
+	font-size: 14px;
+	font-weight: 500;
+	height: 22px;
+	margin-top: 15px;
+	color: #292929;
+}
+
+.loginbtn {
+	color: #6B6A6A;
+	height: 70px;
+	overflow: hidden;
+}
+
+.logininput input {
+	display: block;
+	line-height: 14px;
+	width: 100%;
+	border: #DAE2E5 1px solid;
+	text-indent: 10px;
+	overflow: hidden;
+	color: #979696;
+	padding-top: 13px;
+	padding-bottom: 13px;
+}
+
+.logininput .loginusername {
+	margin-top: 15px;
+	margin-bottom: 10px;
+}
+
+.loginsubmit {
+	width: 130px;
+	height: 40px;
+	margin: 15px 20px 0 0;
+	display: inline;
+}
+
+.loginsubmit .btn {
+	width: 130px;
+	height: 40px;
+	padding-top: 0px;
+	line-height: 40px;
+	overflow: hidden;
+	color: #fff;
+	background: #70CA10;
+	display: block;
+	text-align: center;
+	font-size: 20px;
+	border: none;
+	font-family: '微软雅黑';
+	cursor: pointer;
+}
+
+.loginpd {
+	border-bottom: 1px solid #ecf2f5;
+}
+
+.thirdlogin .pd50 {
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+.thirdlogin h4 {
+	color: #6B6A6A;
+	font-weight: 500;
+	margin-bottom: 20px;
+	font-family: "arial", "微软雅黑";
+}
+
+.thirdlogin ul li {
+	display: inline;
+	float: left;
+	margin: 0 20px 10px 0;
+}
+
+.thirdlogin ul li a {
+	display: block;
+	float: left;
+	height: 40px;
+	line-height: 40px;
+	width: 160px;
+	color: #fff;
+	text-indent: 60px;
+}
+
+#sinal a {
+	background: #d63b22 url(../images/weibo.png) no-repeat 0px -5px;
+}
+
+#qql a {
+	background: #3eb0d8 url(../images/qq.png) no-repeat 0px -5px;
+}
+
+.loginwrap .login_warning {
+	height: 20px;
+	line-height: 20px;
+	overflow: hidden;
+	background: #ff7200;
+	color: #fff;
+	padding: 0 4px;
+	float: left;
+	text-align: center;
+	font-size: 12px;
+	margin-left: 14px;
+	display: inline-block;
+}
+
+.loginverify {
+	color: rgb(151, 150, 150);
+	display: block;
+	font-synthesis: weight style;
+	font-weight: 400;
+	line-height: 14px;
+	list-style-type: none;
+	margin-bottom: 10px;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: 15px;
+	overflow: hidden;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	padding-bottom: 13px;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 13px;
+	text-indent: 10px;
+}
