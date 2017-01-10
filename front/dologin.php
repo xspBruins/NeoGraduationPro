@@ -42,6 +42,7 @@ if($_SESSION['verify'] == $arr['verify']){
     }
     else{
         $_SESSION['count'] = 0;
+        var_dump($arr);
         alertMes("用户名或密码错误~", "index.php?ORC=open");
     } 
 }else {

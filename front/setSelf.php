@@ -26,14 +26,17 @@ $Inforows = getAllInfoByacc($client, $loginuser);
 
 		<!-- Header -->
 			<header id="header">
-				<a href="javascript:void(0);return false;" class="image avatar" onclick="changeAvatarImg()" >
+			    <form action="" method="post" enctype="multipart/form-data" target="">
+				<a href="javascript:void(0);return false;" class="image avatar" onclick="changeAvatarImg('<?php echo $loginuser; ?>')" >
 				<img src="images/avatar/<?php 
-				if($Inforows['avatarImg'] =="")
+				if(($Inforows['avatarImg'] =="")||($Inforows['avatarImg'] == "default.jpg"))
 				    echo "default.jpg"; 
 				else 
 				    echo $Inforows['avatarImg'];
 				?>" alt="" />
+				<input type="file" id="uploadAvatar" style="display: none">
 				</a>
+				</form>
 				<h1 class="infoAccount"><strong><?php if($Inforows['account']){
 				    echo $Inforows['account'];
 				}else {
@@ -50,7 +53,24 @@ $Inforows = getAllInfoByacc($client, $loginuser);
 				<h5 class="infoAddress"><?php echo $Inforows['address'];?></h5>
 				<h5 class="infoPhone"><?php echo $Inforows['phone'];?></h5>
 			</header>
-
+<script type="text/javascript">
+function changeAvatarImg(loginuser){
+	var avatarImg = $(".avatar");
+	$.ajax({
+		type:"POST",
+		url:"setAvatarImg.php",
+		data:{account:loginuser},
+		cache:false,
+		//dataType:"json",
+		success:function(data){
+			//alert(data);
+		},
+		error:function(){
+			alert("出现error...");
+		}
+	});
+}
+</script>
 		<!-- Main -->
 			<div id="main">
 		

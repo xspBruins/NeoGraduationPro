@@ -11,6 +11,7 @@ $add['phone'] = $_POST['phone'];
 $add['uname'] = $_POST['uname'];
 $add['tag'] = $_POST['tag'];
 $add['address'] = $_POST['address'];
+$add['avatarImg'] = 'default.jpg';
 
 $client = connectionToNeo4j();
 //已有账号返回

@@ -1,6 +1,8 @@
 <?php
 require_once '../include.php';
 
+$client = connectionToNeo4j();
+
 $arr['name'] = $_POST['name'];
 $arr['email'] = $_POST['email'];
 $arr['address'] = $_POST['address'];
@@ -28,6 +30,17 @@ if($arr['phone']){
 if($arr['tag']){
     $userInfo['tag'] = $arr['tag'];
 }
+
+//编辑用户信息
+$editInfo = $userInfo;
+$editInfo['account'] = $_SESSION['user'];
+$editInfo['email'] = $arr['email'];
+if($userInfo['name']){
+    $editInfo['name'] = $arr['name'];
+}
+editUserInfo($client,$editInfo);
+
+//返回DATA
 echo  json_encode($userInfo);
 
 /*没考虑到用户可能有些文本框未输入值，导致前端刷新匹配错误
