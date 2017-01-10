@@ -1,71 +1,62 @@
 <?php
-require_once '../lib/string.func.php';
-header("content-type:text/html;charset=gb2312");
-//print_r($_FILES);
-/*$filename = $_FILES['pImg']['name'];
-$type = $_FILES['pImg']['type'];
-$tmp_name = $_FILES['pImg']['tmp_name'];
-$error = $_FILES['pImg']['error'];
-$size = $_FILES['pImg']['size'];*/
-
 
 function uploadImg($fileInfo,$path = "uploads",$allowExt = array("gif","jpeg","jpg","png","wbmp"),$maxSize = 1048576,$imgFlag = true){
 
-        //еп╤о╢МнСпео╒
+        //Е┬╓Ф√╜И■≥Х╞╞Д©║Ф│╞
         if ($fileInfo['error'] == UPLOAD_ERR_OK) {
-		$ext = getExt ( $fileInfo['name'] ); // х║╣цнд╪Чю╘у╧цШ
-		$filename = getUniName () . "." . $ext; // getUniName()╩Я╣цн╗р╩цШвж╪сиою╘у╧цШё╛╪╢иЗЁин╗р╩нд╪ЧцШё╛╠ёж╓©иртжь╦╢ио╢╚р╩уем╪ф╛
-		// ио╢╚нд╪ЧюЮпмйг╥ЯтзтйпМюЮпмж╝жп
+		$ext = getExt ( $fileInfo['name'] ); // Е▐√Е╬≈Ф√┤Д╩╤Ф┴╘Е╠∙Е░█
+		$filename = getUniName () . "." . $ext; // getUniName()Х▌╥Е╬≈Е■╞Д╦─Е░█Е╜≈Е┼═Д╦┼Ф┴╘Е╠∙Е░█О╪▄Е█ЁГ■÷Ф┬░Е■╞Д╦─Ф√┤Д╩╤Е░█О╪▄Д©²Х╞│Е▐╞Д╩╔И┤█Е╓█Д╦┼Д╪═Д╦─Е╪═Е⌡╬Г┴┤
+		// Д╦┼Д╪═Ф√┤Д╩╤Г╠╩Е·▀Ф≤╞Е░╕Е°╗Е┘│Х╝╦Г╠╩Е·▀Д╧▀Д╦╜
 		if (! in_array ( $ext, $allowExt )) {
-			exit ( "╥г╥╗нд╪ЧюЮпм!" );
+			exit ( "И²·ФЁ∙Ф√┤Д╩╤Г╠╩Е·▀!" );
 		}
-		// очжфио╢╚нд╪Ч╢Сп║
+		// И≥░Е┬╤Д╦┼Д╪═Ф√┤Д╩╤Е╓╖Е╟▐
 		if ($fileInfo['size'] > $maxSize) {
-			exit ( "ио╢╚нд╪ЧЁ╛╧Щ2M!" );
+			exit ( "Д╦┼Д╪═Ф√┤Д╩╤Х╤┘Х©┤2M!" );
 		}
-		// хГ╧Шц╩спнд╪Ч╪пё╛втпп╢╢╫╗
+		// Е╕┌Ф·°Ф╡║Ф°┴Ф√┤Д╩╤Е╓╧О╪▄Х┤╙Х║▄Е┬⌡Е╩╨
 		if (! file_exists ( $path )) {
-			mkdir ( $path, 0777, true ); // $path╠Мй╬д©б╪б╥╬╤ё╛0777╢З╠Мд©б╪╡ывВх╗очн╙вН╢Сё╛true╢З╠М©ирт╢╢╫╗╤Ю╪╤д©б╪
+			mkdir ( $path, 0777, true ); // $pathХ║╗Г╓╨Г⌡╝Е╫∙Х╥╞Е╬└О╪▄0777Д╩ёХ║╗Г⌡╝Е╫∙Ф⌠█Д╫°Ф²┐И≥░Д╦╨Ф°─Е╓╖О╪▄trueД╩ёХ║╗Е▐╞Д╩╔Е┬⌡Е╩╨Е╓ Г╨╖Г⌡╝Е╫∙
 		}
-		// ╪ЛяИнд╪Чйг╥ЯуФ╣дн╙м╪ф╛юЮпм
+		// Фё─И╙▄Ф√┤Д╩╤Ф≤╞Е░╕Г°÷Г └Д╦╨Е⌡╬Г┴┤Г╠╩Е·▀
 		if ($imgFlag) {
 			$info = getimagesize ( $fileInfo['tmp_name'] );
 			if (! $info) {
-				exit ( "╦цнд╪Ч╡╩йгуФуЩм╪ф╛юЮпм!" );
+				exit ( "Х╞╔Ф√┤Д╩╤Д╦█Ф≤╞Г°÷Ф╜ёЕ⌡╬Г┴┤Г╠╩Е·▀!" );
 			}
 		}
 		$destination = $path . "/" . $filename;
-		if (is_uploaded_file ( $fileInfo['tmp_name'] )) { // еп╤онд╪Чйг╥Ям╗╧ЩHTTP POST╥╫й╫ио╢╚╣д
+		if (is_uploaded_file ( $fileInfo['tmp_name'] )) { // Е┬╓Ф√╜Ф√┤Д╩╤Ф≤╞Е░╕И─ Х©┤HTTP POSTФ√╧Е╪▐Д╦┼Д╪═Г └
 			if (move_uploaded_file ( $fileInfo['tmp_name'], $destination )) {
-				$mes = "нд╪Чио╢╚Ёи╧╕";
+				$mes = "Ф√┤Д╩╤Д╦┼Д╪═Ф┬░Е┼÷";
 			} else {
-				$mes = "нд╪Чрф╤╞й╖╟э";
+				$mes = "Ф√┤Д╩╤Г╖╩Е┼╗Е╓╠Х╢╔";
 			}
 		} else {
-			$mes = "нд╪Ч╡╩йгм╗╧ЩHTTP POST╥╫й╫ио╢╚╣д";
+			$mes = "Ф√┤Д╩╤Д╦█Ф≤╞И─ Х©┤HTTP POSTФ√╧Е╪▐Д╦┼Д╪═Г └";
 		}
 	} else {
 		switch ($fileInfo['error']) {
 			case 1 :
-				$mes = "Ё╛╧ЩеДжцнд╪Чио╢╚нд╪Ч╢Сп║";
+				$mes = "Х╤┘Х©┤И┘█Г╫╝Ф√┤Д╩╤Д╦┼Д╪═Ф√┤Д╩╤Е╓╖Е╟▐";
 				break;
 			case 2 :
-				$mes = "Ё╛╧Щ╠М╣╔иХжцио╢╚нд╪Ч╢Сп║";
+				$mes = "Х╤┘Х©┤Х║╗Е█∙Х╝╬Г╫╝Д╦┼Д╪═Ф√┤Д╩╤Е╓╖Е╟▐";
 				break;
 			case 3 :
-				$mes = "нд╪Ч╡©╥ж╠╩ио╢╚";
+				$mes = "Ф√┤Д╩╤И┐╗Е┬├Х╒╚Д╦┼Д╪═";
 				break;
 			case 4 :
-				$mes = "ц╩спнд╪Ч╠╩ио╢╚";
+				$mes = "Ф╡║Ф°┴Ф√┤Д╩╤Х╒╚Д╦┼Д╪═";
 				break;
 			case 6 :
-				$mes = "ц╩спур╣╫аый╠нд╪Ч";
+				$mes = "Ф╡║Ф°┴Ф┴╬Е┬╟Д╦╢Ф≈╤Ф√┤Д╩╤";
 				break;
 			case 7 :
-				$mes = "нд╪Ч╡╩©ип╢";
+				$mes = "Ф√┤Д╩╤Д╦█Е▐╞Е├≥";
 				break;
 			case 8 :
-				$mes = "сисзPHP╣дю╘у╧ЁлпРжп╤онд╪Чио╢╚";
+				$mes = "Г■╠Д╨▌PHPГ └Ф┴╘Е╠∙Г╗▀Е╨▐Д╦╜Ф√╜Ф√┤Д╩╤Д╦┼Д╪═";
 				break;
 		}
 	}

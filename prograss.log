@@ -1,4 +1,4 @@
-2016/9/06
+ï»¿2016/9/06
 /*
 *  Download and install Neo4j3.0.3,learn cypher to oprate.
 *  @xspbruins
@@ -76,8 +76,8 @@
 */
 2016/12/22
 /*
-*  Add judge code,when login ,"µÇÂ¼"&"×¢²á" change into "$login_user"&"×¢Ïú"
-*  Add page logout.php for "×¢Ïú"
+*  Add judge code,when login ,"ç™»å½•"&"æ³¨å†Œ" change into "$login_user"&"æ³¨é”€"
+*  Add page logout.php for "æ³¨é”€"
 *
 *  if show the garbage characters see the encoding of page may it is ot ANSI or GBK, while you use utf-8
 *  @xspbruins
@@ -89,14 +89,14 @@
 2016/12/24
 /*
 *  MERRY CHRISTMAS!!! but I'm still type codes...
-*  Ajax to refresh verify£ºadd verify img->src a parameter,and in that way, i use dateTime()
+*  Ajax to refresh verifyï¼šadd verify img->src a parameter,and in that way, i use dateTime()
 *  First, set yimezone
 *  Second, new dateTime('Y-m-d H:i:s')
 *  Third, change the <code><img src='getVerify.php'/></code> to <code>echo '<img src="getVerify.php?"'.$time.'/>'</code>
 */
 2016/12/25
 /*
-*  Add findbackPasswordSt1 & St2 page£º
+*  Add findbackPasswordSt1 & St2 pageï¼š
 *  Complete redirect from St1 to St2,and finish verification on Account and Email
 *  @xspbruins
 */
@@ -130,7 +130,7 @@
 */
 2017/01/04
 /*
-*  Complete contactUS page by url(D:\¿Î³ÌÉè¼Æ\66137\index.html:#contact),exactly,it's a part.
+*  Complete contactUS page by url(D:\è¯¾ç¨‹è®¾è®¡\66137\index.html:#contact),exactly,it's a part.
 *  Upload new avatar image with Ajax,and create a function at the edit information form,realize click show or hidde.
 *  @xspbruins 
 */
@@ -154,6 +154,51 @@
 *  @xspbruins
 */
 2017/01/08
+/*
+*  Steps of upload project file to GitHub:
+*  1.Login in https://github.com , and create a repository,if you don't has a account,registe it.
+*  2.Create a README.md in your repository,and click in it,then click open this file in GitHub Desktop.(an computer icon over right)
+*  3.Download Github Desktop with https://desktop.github.com/ , and imstall it.
+*  4.Right-click your opened repository in GitHub Desktop,click open in Gitshell.
+*  5.Copy all the file to the local-repository-folder,then input "git add ." in Gitshell.
+*  6.Input ' git commit -m "here your note" ' for commit your copy file.
+*  7.The last step,input "git push -u origin master" for upload the file,after that,you can refresh your Webgithub,will see the changes.
+*  @xspbruins
+*/
+2017/01/09
+/*
+*  Translate muti-if() into switch() for set the information that edited
+*  Thinking about how to hide <code><input type="file"></code>,also,realize upload avatar-image.
+*  @xspbruins
+*/
+2017/01/10
+/*
+*  A Enhancing the experience degree change: onclick() to onchange() in editing users's information atsetSelf.php,just onchange is more flexible!
+*  Peferct to combine input-file with a,realize upload avatar-image on front-page:
+*  
+*/
+2017/01/11
+/*
+*  A day that means I'll leave DaLian&DMU tomorrow.
+*  (FILTER or [*2..2])An inspiration occured that if not realizing find friends->friends but not my friends,
+*  just use cypher query two array,and use php to handle them,and achieve target
+*/
+2017/01/12
+/*
+*  Leave for Shanghai!
+*/
+2017/01/28
+/*
+*  An break down day!
+*  When pass the form-data and ajax-data to an same page,the first return data is ajax. That means ajax run this page first then the form run it.
+*  
+*/
+2017/02/04
+/*
+*  An discovery that cookie in php just can be evaluated at the second time. It means user can see effect after refresh browser.
+*  so, I trun to use session.
+*/
+2017/02/
 /*
 *  
 */

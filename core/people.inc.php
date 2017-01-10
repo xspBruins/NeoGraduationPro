@@ -1,6 +1,73 @@
 <?php
 require_once '../include.php';
 
+function editUserAvatar($client,$arr){
+    $cypher = <<<EOQ
+    MATCH(user:userPeople)
+    WHERE user.account = '{$arr['account']}'
+    SET user.avatarImg = '{$arr['filename']}'
+    RETURN user.avatarImg as avatarImg
+EOQ;
+    $results = $client->run($cypher);
+    $result = $results->records();
+    foreach ($result as $record){
+        $avatarImg = $record->get('avatarImg');
+    }
+    return $avatarImg;
+}
+
+function editUserInfo($client,$arr){
+    $keys = array_keys($arr);
+    foreach ($keys as $key){
+        switch ($key) {
+            case "name":
+                $cypher = <<<EOQ
+                MATCH (user:userPeople)
+                WHERE user.account = '{$arr['account']}'
+                SET user.name= '{$arr['name']}'
+EOQ;
+                $client->run($cypher);
+                //unset($arr['name']);
+                break;
+            case "email":
+                $cypher = <<<EOQ
+                MATCH (user:userPeople)
+                WHERE user.account = '{$arr['account']}'
+                SET user.email= '{$arr['email']}'
+EOQ;
+                $client->run($cypher);
+                //unset($arr['email']);
+                break;
+            case "address":
+                $cypher = <<<EOQ
+                MATCH (user:userPeople)
+                WHERE user.account = '{$arr['account']}'
+                SET user.address= '{$arr['address']}'
+EOQ;
+                $client->run($cypher);
+                //unset($arr['address']);
+                break;
+            case "phone":
+                $cypher = <<<EOQ
+                MATCH (user:userPeople)
+                WHERE user.account = '{$arr['account']}'
+                SET user.phone= '{$arr['phone']}'
+EOQ;
+                $client->run($cypher);
+                //unset($arr['phone']);
+                break;
+            case "tag" :
+                $cypher = <<<EOQ
+                MATCH (user:userPeople)
+                WHERE user.account = '{$arr['account']}'
+                SET user.tag= '{$arr['tag']}'
+EOQ;
+                $client->run($cypher);
+                //unset($arr['tag']);
+                break;
+        }
+    }
+}
 function getAllInfoByacc($client,$user){
     $cypher = <<<EOQ
     MATCH (user:userPeople)
@@ -61,7 +128,8 @@ function addUser($client,$add){
 	email:"{$add['email']}",
 	phone:"{$add['phone']}",
 	tag:"{$add['tag']}",
-	address:"{$add['address']}"
+	address:"{$add['address']}",
+	avatarImg:"{$add['avatarImg']}"
     });
 EOQ;
 	//echo $insert_query;

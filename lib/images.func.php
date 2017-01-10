@@ -69,6 +69,33 @@ function img_create_small($big_img, $width, $height, $small_img) {//原始大图地址
     imagecopyresampled($tn, $im, 0, 0, 0, 0, $width, $height, $src_W, $src_H); //复制图像并改变大小
     imagejpeg($tn, $small_img); //输出图像
 }
+//截取图像并输出
+function img_create_part($src_path,$x,$y){
 
+    //创建源图的实例
+    $src = imagecreatefromstring(file_get_contents($src_path));
+    
+    //裁剪开区域左上角的点的坐标
+    $x = 100;
+    $y = 12;
+    //裁剪区域的宽和高
+    $width = 123;
+    $height = 123;
+    //最终保存成图片的宽和高，和源要等比例，否则会变形
+    $final_width = 100;
+    $final_height = round($final_width * $height / $width);
+    
+    //将裁剪区域复制到新图片上，并根据源和目标的宽高进行缩放或者拉升
+    $new_image = imagecreatetruecolor($final_width, $final_height);
+    imagecopyresampled($new_image, $src, 0, 0, $x, $y, $final_width, $final_height, $width, $height);
+    
+    //输出图片
+    header('Content-Type: image/jpeg');
+    imagejpeg($new_image);
+    
+    imagedestroy($src);
+    imagedestroy($new_image);
+    
+}
 
 
