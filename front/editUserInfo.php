@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 <<<<<<< Updated upstream
+=======
+>>>>>>> cc9a4e4708ccd394c26f5916d4a5d79dd9e25f5d
 <?php
 require_once '../include.php';
 
@@ -61,6 +64,7 @@ if($arr['tag']){
  */
 
 
+<<<<<<< HEAD
 =======
 <?php
 require_once '../include.php';
@@ -125,3 +129,5 @@ if($arr['tag']){
 
 
 >>>>>>> Stashed changes
+=======
+>>>>>>> cc9a4e4708ccd394c26f5916d4a5d79dd9e25f5d

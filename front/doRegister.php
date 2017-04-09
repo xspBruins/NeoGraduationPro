@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 <<<<<<< Updated upstream
+=======
+>>>>>>> cc9a4e4708ccd394c26f5916d4a5d79dd9e25f5d
 ﻿<?php
 require_once '../include.php';
 
@@ -45,6 +48,7 @@ if($HAA){
 }
 
 
+<<<<<<< HEAD
 =======
 ﻿<?php
 require_once '../include.php';
@@ -93,3 +97,5 @@ if($HAA){
 
 
 >>>>>>> Stashed changes
+=======
+>>>>>>> cc9a4e4708ccd394c26f5916d4a5d79dd9e25f5d
